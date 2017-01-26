@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MyTitle</title>
+    </head>
+    <body>
+        <h1>Before</h1>
+        <script>
+            var w = window.open();
+            var d = w.document;
+            d.write("<h1>Hello World!</h1>");
+            d.close();
+        </script>
+        
+        <button onclick="document.title += ' (1)';">Clear</button>
+    </body>
+</html>

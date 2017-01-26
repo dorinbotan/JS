@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+* {
+	margin:0;
+	padding:0;
+}
+
+/*-------------------------
+	File manager
+-------------------------*/
+
+.filemanager {
+	position: relative;
+	margin: 100px auto 50px;
+}
+
+@media all and (max-width: 965px) {
+	.filemanager {
+		margin: 30px auto 0;
+	}
+}
+
+/*-------------------------
+	Breadcrumps
+-------------------------*/
+
+.filemanager .breadcrumbs {
+	color: #363636;
+	margin-left:40px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.filemanager .breadcrumbs a:link, .breadcrumbs a:visited {
+	color: #363636;
+	text-decoration: none;
+}
+
+.filemanager .breadcrumbs a:hover {
+	text-decoration: underline;
+}
+
+.filemanager .breadcrumbs .arrow {
+	color:  #6a6a72;
+}
+
+/*-------------------------
+	Content area
+-------------------------*/
+
+.filemanager .data {
+	margin-top: 60px;
+}
+
+.filemanager .data.animated {
+/*	-webkit-animation: showSlowlyElement 700ms;*/
+/*	animation: showSlowlyElement 700ms;*/
+}
+
+.filemanager .nothingfound {
+	width: 23em;
+	height: 21em;
+	margin: 0 auto;
+	display: none;
+	-webkit-animation: showSlowlyElement 700ms;
+	animation: showSlowlyElement 700ms;
+}
+
+.filemanager .nothingfound .nofiles {
+	margin: 30px auto;
+	top: 3em;
+	border-radius: 50%;
+	position:relative;
+	background-color: #d72f6e;
+	width: 11em;
+	height: 11em;
+	line-height: 11.4em;
+}
+.filemanager .nothingfound .nofiles:after {
+	content: '×';
+	position: absolute;
+	color: #ffffff;
+	font-size: 14em;
+	margin-right: 0.092em;
+	right: 0;
+}
+
+.filemanager .nothingfound span {
+	margin: 0 auto auto 6.8em;
+    text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 20px;
+	height: 13px;
+	position: relative;
+	top: 2em;
+}
+
+@media all and (max-width:965px) {
+	.filemanager .data li {
+		margin: 5px 0;
+	}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes showSlowlyElement {
+	100%   	{ transform: scale(1); opacity: 1; }
+	0% 		{ transform: scale(1.2); opacity: 0; }
+}
+
+/* Standard syntax */
+@keyframes showSlowlyElement {
+	100%   	{ transform: scale(1); opacity: 1; }
+	0% 		{ transform: scale(1.2); opacity: 0; }
+}
+
+/*-------------------------
+		Icons
+-------------------------*/
+
+.icon {
+    display: inline-block;
+    width: 11%;
+    text-decoration: none;
+    
+    margin-bottom: 40px;
+}
+
+.icon:hover {
+    background-color: #ebebeb;
+}
+
+.vector {
+    width: 100px;
+    
+    display: block;
+    margin: auto;
+}
+
+.filename {
+    font-family: sans-serif;
+    font-size: 14px;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    text-align: center;
+    color: black;
+    
+    margin: 0 5px;
+}
+
+@media only screen and (max-device-width : 480px) {
+    .icon {
+        width: 24%;
+    }
+    
+    .vector {
+        width: 200px;
+    }
+    
+    .filename {
+        font-size: 26px;
+    }
+}
+@media only screen and (max-device-width : 650px) and (min-device-width : 481px) {
+    .icon {
+        width: 20%;
+    }
+    
+    .vector {
+        width: 160px;
+    }
+}
+@media only screen and (max-device-width : 1050px) and (min-device-width : 651px) {
+    .icon {
+        width: 13.9%;
+    }
+    
+    .vector {
+        width: 120px;
+    }
+}
+@media only screen and (max-device-width : 1290px) and (min-device-width : 1051px) {
+    .icon {
+        width: 10%;
+    }
+}
+@media only screen and (min-device-width : 1291px) {
+    .icon {
+        width: 9%;
+    }
+}
+
+/*----------------------------
+	Header
+-----------------------------*/
+
+.header {
+    display: flex;
+    height: 60px;
+    padding-right: 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.header_side-left {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+.header_side-right {
+    display: flex;
+    align-items: center
+}
+
+.input_theme_islands.input_size_m {
+    font-size: 13px;
+    line-height: 16px
+}
+
+.input_theme_islands.input_size_m .input_control {
+    height: 28px;
+    padding: 0 5px
+}
+
+.input_theme_islands {
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.input_theme_islands:before {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    content: '';
+    background: #fff
+}
+
+.input_theme_islands .input_control {
+    position: relative;
+    border: 0;
+}

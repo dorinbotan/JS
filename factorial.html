@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Факториал</title>
+    <style>
+        .result { font-weight: bold; }
+        #payment { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <form name="loandata">
+        <table>
+            <tr><td><b>Введите данные о ссуде: </b></td></tr>
+            <tr>
+                <td>1) Размер ссуды (в любой валюте):</td>
+                <td><input type="text" name="principal" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>2) Годовой процент:</td>
+                <td><input type="text" name="interest" onchange="calculate();"></td>
+            </tr>
+            <tr>
+                <td>3) Срок ссуды в годах:</td>
+                <td><input type="text" name="years" onchange="calculate();"></td>
+            </tr>
+            <tr><td></td>
+                <td><input type="button" value="Рассчитать" onclick="calculate();"></td>
+            </tr>
+            <tr><td><b>Сведения о платежах:</b></td></tr>
+            <tr>
+                <td>4) Ежемесячный платеж:</td>
+                <td>$<span class="result" id="payment"></span></td>
+            </tr>
+            <tr>
+                <td>5) Общая сумма платежей:</td>
+                <td>$<span class="result" id="total"></span></td>
+            </tr>
+            <tr>
+                <td>6) Общая сумма платежей по процентам:</td>
+                <td>$<span class="result" id="totalinterest"></span></td>
+            </tr>
+        </table>
+    </form>
+    
+    <script language="JavaScript">
+        function calculate() {
+            var principal = document.loandata.principal.value;
+            var interest = document.loandata.interest.value / 100 / 12;
+            var payments = document.loandata.years.value * 12;
+            
+            var x = Math.pow(1 + interest, payments);
+            var monthly = (principal * x * interest) / (x - 1);
+            
+            var payment = document.getElementById("payment");
+            var total = document.getElementById("total");
+            var totalinterest = document.getElementById("totalinterest");
+            
+            if(isFinite(monthly)) {
+                payment.innerHTML = monthly.toFixed(2);
+                total.innerHTML = (monthly * payments).toFixed(2);
+                totalinterest.innerHTML = ((monthly * payments) - principal).toFixed(2);
+            }
+            else {
+                payment.innerHTML = "";
+                total.innerHTML = "";
+                totalinterest.innerHTML = "";
+            }
+        }
+    </script>
+    
+    <h1>Таблицы факториалов</h1>
+    
+    <script language="JavaScript">
+        var fact = 1;
+        for(var i = 1; i < 10; i++) {
+            fact = fact * i;
+            document.write(i + "! = " + fact + "<br>");
+        }
+        
+        document.write(i);
+    </script>
+    
+    <button onclick="alert('Был зафиксирован щелчок на кнопке');">Щёлк меня</button>
+    
+    <script>$("div.test").add("p.quote").addClass("blue").slideDown("slow");</script>
+    
+    <script>
+        function Circle(radius) {
+            this.r = radius;
+        }
+        
+        Circle.PI = 3.14159;
+        
+        Circle.prototype.area = function() {return Circle.PI * this.r * this.r};
+        
+        Circle.max = function(a, b) {
+            return a.r > b.r ? a : b;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Tagarno FHD Uno</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="header_side-left">
+            <svg width="180px" height="35px">
+                <text transform="matrix(1 0 0 1 20 30)" font-family="Arial" font-size="31"><![CDATA[TAGARNO]]></text>
+            </svg>
+        </div>
+        <div class="header_side-right">
+            <form>
+                <span class="input_size_m input_theme_islands">
+                    <input class="input_control search" placeholder="Type in file name" type="search">
+                </span>
+            </form>
+        </div>
+    </div>
+    
+	<div class="filemanager">
+		<div class="breadcrumbs"></div>
+
+		<div class="data">
+        </div>
+
+		<div class="nothingfound">
+			<div class="nofiles"></div>
+			<span>No files here.</span>
+		</div>
+	</div>
+    
+    <aside>
+        <div class="fileName">img_20170125_093000725_graphics.png</div>
+        <div class="fileinfo">Size: 15MB</div>
+        <div class="previewimage"><img src="files/images/png/img_20170125_093000725_graphics.png"></div>
+    </aside>
+    
+    <style>
+        .filemanager {
+/*            float: left;*/
+        }
+        .previewimage {
+            background: white;
+            height: 400px;
+        }
+        img {
+            width: 400px;
+        }
+        aside {
+            background: #f0f0f0;
+            width: 400px;
+            height: 900px;
+            float: right;
+        }
+    </style>
+    
+	<script src="assets/js/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

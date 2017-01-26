@@ -1,0 +1,48 @@
+#wrap {
+    overflow: hidden;
+}
+
+.box {
+    width: 7.142%;
+    padding-bottom: 7.142%;
+    color: #fff;
+    position: relative;
+    float: left;
+}
+
+.innerContent {
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    background: #66F;
+    padding: 10px;
+}
+
+@media only screen and (max-width : 480px) {
+   .box {
+      width: 20%;
+      padding-bottom: 20%;
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   .box {
+      width: 25%;
+      padding-bottom: 25%;
+   }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   .box {
+      width: 25%;
+/*      width: 14.285%;*/
+      padding-bottom: 25%;
+/*      padding-bottom: 14.287%;*/
+   }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+   .box {
+      width: 10%;
+      padding-bottom: 10%;
+   }
+}
