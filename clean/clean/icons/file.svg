@@ -1,0 +1,5 @@
+<svg viewBox="0 0 53 53" width="53" height="53">
+    <path d="M12.4 3A-2.4 2.4,0,0,0 10 5.4L10 47.6A2.4 2.9 0,0,0 12.4 50L42.6 50A2.9 -2.4,0,0,0 45 47.6L45 17 31 3 12.4 3" fill="#00b46f"/>
+    <path d="M45 17L31 3 31 14.6A2.4 2.4,0,0,0 33.4 17L45 17" fill="#00e38c"/>
+    <text text-anchor="middle" font-family="sans-serif" font-size="12" y="33" x="26.5" fill="#fff">.xls</text>
+</svg>

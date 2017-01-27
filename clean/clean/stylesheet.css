@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.icon {
+    display: inline-block;
+    width: 11%;
+    text-decoration: none;
+    
+    margin-bottom: 40px;
+}
+
+.icon:hover {
+    background-color: #ebebeb;
+}
+
+.vector {
+    width: 90px;
+    
+    display: block;
+    margin: auto;
+}
+
+.filename {
+    font-family: sans-serif;
+    font-size: 14px;
+    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    text-align: center;
+    color: black;
+    
+    margin: 0 5px;
+}
+
+@media only screen and (max-width : 480px) {
+    .icon {
+        width: 24%;
+    }
+    
+    .vector {
+        width: 200px;
+    }
+    
+    .filename {
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+    .icon {
+        width: 20%;
+    }
+    
+    .vector {
+        width: 160px;
+    }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+    .icon {
+        width: 13.9%;
+    }
+    
+    .vector {
+        width: 120px;
+    }
+}
+@media only screen and (max-width : 1290px) and (min-device-width : 1051px) {
+    .icon {
+        width: 10%;
+    }
+}
+@media only screen and (min-width : 1291px) {
+    .icon {
+        width: 7%;
+    }
+}
