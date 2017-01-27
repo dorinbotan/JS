@@ -2,10 +2,14 @@ $(function(){
     var filemanager = $('.filemanager'),
         header = $('.header'),
 		breadcrumbs = $('.breadcrumbs'),
+        sidebar = $('.sidebar'),
 		fileList = filemanager.find('.data');
     
+    var url,
+        currentFile;
+    
 	// Start by fetching the file data from files.json with an AJAX request    
-	$.get('files.json', function(data) {
+	$.get('files.json', function(data) {        
 		var response = [data],
 			currentPath = '',
 			breadcrumbsUrls = [];
@@ -44,6 +48,7 @@ $(function(){
 			}
 		});
 
+        // TODO: dblclick
 		// Clicking on folders
 		fileList.on('click', 'span.folders', function(e) {
 			e.preventDefault();
@@ -70,9 +75,42 @@ $(function(){
         fileList.on('click', 'span.files', function(e) {
             e.preventDefault();
             
-            alert(e.currentTarget.innerHTML);
-        })
-
+            var fileName = $(this).find('p.filename').html();
+            var fullFilePath = $(this).find('a.icon.file').attr('href');
+            
+            var filePath = fullFilePath.substr(5);
+            
+            sidebar.html('<p class="fileInfo">' + fileName + '</p><img class="filePreview" src="' + filePath + '"><div class="buttons"><a class="button download" href="' + fullFilePath + '" download="' + fileName + '">Download</a><a class="button rename" href="#">Rename</a><a class="button delete" href="#">Delete</a></div>');
+                        
+            url = fullFilePath;
+            currentFile = $(this);
+        });
+        
+        // Deleting files
+        sidebar.on('click', '.button.delete', function(e) {
+            e.preventDefault();
+            
+            $.post(url, { Instruction: "Delete" }).done(function(data) {
+                // TODO: solve exceptions here
+            });
+            
+            location.reload();
+        });
+        
+        // Renaming files
+        sidebar.on('click', '.button.rename', function(e) {
+            e.preventDefault();
+            
+            // TODO: check me (.format)
+            var newName = prompt("Enter new name", currentFile.find('p.filename').html());
+            
+            $.post(url, { Instruction: "Rename", Name: newName })
+                .done(function(data) {
+            });
+            
+            location.reload();
+        });
+        
 		// Clicking on breadcrumbs
 		breadcrumbs.on('click', 'a', function(e){
 			e.preventDefault();
@@ -314,6 +352,8 @@ $(function(){
                 case 'pdf':
                 case 'png':
                     return ['#e15955', '#c6393f'];
+                case 'bmp':
+                    return ['#7adfed', '#649fab'];
                 case 'deb':
                 case 'dmg':
                 case 'gz':
